@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --chart-primary: theme('colors.primary.DEFAULT');
+    --chart-soft: theme('colors.primary.light');
+    --chart-muted: theme('colors.muted');
+    --chart-border: theme('colors.warm');
+    --chart-success: theme('colors.success');
+    --chart-danger: theme('colors.danger');
+    --chart-warning: theme('colors.warning');
+  }
+  body {
+    @apply bg-surface font-jakarta text-dark antialiased;
+  }
+
+  :focus-visible {
+    @apply outline outline-2 outline-offset-4 outline-primary-dark;
+  }
+
+  ::selection {
+    @apply bg-primary-light text-dark;
+  }
+
+  meter::-webkit-meter-bar {
+    @apply rounded-full border-0 bg-panel;
+  }
+  meter::-webkit-meter-optimum-value {
+    @apply rounded-full bg-primary-dark;
+  }
+  meter::-moz-meter-bar {
+    @apply rounded-full bg-primary-dark;
+  }
+}
